@@ -1,6 +1,4 @@
-
-import argparse
-import numpy as np
+import numpy
 import colour
 
 
@@ -18,7 +16,7 @@ def rgb_to_temperature(rgb):
     -------
     numeric : CCT (correlated color temperature) in kelvin
     """
-    rgb_array = np.array(rgb)
+    rgb_array = numpy.array(rgb)
     xyz = colour.sRGB_to_XYZ(rgb_array / 255)
     xy = colour.XYZ_to_xy(xyz)
     cct = colour.xy_to_CCT_Hernandez1999(xy)
